@@ -2438,8 +2438,8 @@ section,
 }
 
 .tech-img {
-  width: 120px; /* Set image size */
-  height: 120px;
+  width: 80px; /* Set image size */
+  height: 80px;
   object-fit: contain;
   transition: transform 0.3s ease;
   margin-bottom: 10px; /* Space between image and text */
