@@ -217,3 +217,23 @@
     });
   });
   
+
+ // navbar menu setup 
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('#navmenu a');
+  
+    // Get the current page's URL
+    const currentPage = window.location.pathname.split('/').pop();
+  
+    // Loop through all navigation links
+    navLinks.forEach(link => {
+      // If the href attribute matches the current page
+      if (link.getAttribute('href').includes(currentPage)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+  
