@@ -4,7 +4,7 @@
 }
 
 .services-menu {
-    background-color: #3195fd;
+    /* background-color: #3195fd; */
     padding: 20px;
     border-radius: 25px;
 }
@@ -17,7 +17,7 @@
 .services-menu li {
     padding: 10px;
     cursor: pointer;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     transition: background-color 0.3s;
 }
 
@@ -29,6 +29,7 @@
 
 .services-menu li:hover {
     background-color: #a8e5e5;
+    border-radius: 25px;
 }
 
 .service-detail {
