@@ -24,12 +24,13 @@
 .services-menu li.active {
     background-color: #12e0e0;
     color: #fff;
-    border-radius: 25px;
+    border-radius: 10px;
+    
 }
 
 .services-menu li:hover {
     background-color: #a8e5e5;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .service-detail {
@@ -44,7 +45,7 @@
     margin-top: 0;
     font-size: 1.5rem;
     text-align: center;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .service-content {
@@ -135,4 +136,45 @@
         max-width: 70%;   /* Make the image even smaller */
         margin: 0 auto;
     }
+}
+
+/* Add this CSS at the end of your styles */
+
+/* Keyframes for fadeIn and slideUp animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add fade-in effect for service details */
+.service-detail {
+    display: none;
+    margin-bottom: 30px;
+    background-color: #eafcfc;
+    padding: 20px;
+    border-radius: 25px;
+    animation: fadeInUp 0.8s ease-out; /* Smooth fade-in effect */
+}
+
+/* This can be triggered when service is active */
+.service-detail.active {
+    display: block;
+}
+
+/* Animation for menu item hover */
+.services-menu li:hover {
+    background-color: #a8e5e5;
+    border-radius: 10px;
+    transform: scale(1.05); /* Slightly zoom in when hovering */
+}
+
+/* You can also add a transition for smoother color change */
+.services-menu li {
+    transition: background-color 0.3s, transform 0.3s;
 }
