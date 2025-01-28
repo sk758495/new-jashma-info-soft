@@ -22,14 +22,14 @@
 }
 
 .services-menu li.active {
-    background-color: #12e0e0;
+    background-color: #3195fd;
     color: #fff;
     border-radius: 10px;
     
 }
 
 .services-menu li:hover {
-    background-color: #a8e5e5;
+    background-color: #3195fd;
     border-radius: 10px;
 }
 
@@ -94,7 +94,7 @@
     max-width: 100%;    /* Ensure the image does not exceed its container */
     display: block;     /* Remove space below the image */
     border-radius: 25px; /* Optional: Adds rounded corners to images */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow effect */
+    
 }
 
 /* Responsive Breakpoints */
