@@ -25,6 +25,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/web-developer.css" rel="stylesheet">
 
 </head>
 
@@ -75,6 +76,126 @@
   </header>
 
   <main class="main">
+
+  <!-- Career Opportunities Section -->
+  <section id="career-opportunities" class="career-opportunities section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Career Content -->
+        <div class="col-lg-6">
+          <div class="career-content" style="padding: 20px;">
+            <h2>Explore Career Opportunities in Website Development</h2>
+            <p>
+              At Jashma Info Soft Pvt. Ltd., we offer exciting career opportunities in the world of website development. Join our talented team of developers, designers, and innovators. We value creativity, collaboration, and a passion for technology. Whether you're a seasoned developer or just starting, we have a place for you!
+            </p>
+            <p>
+              Explore our current career opportunities and apply for positions that suit your skills. Choose your desired role and join us to create cutting-edge websites and digital experiences.
+            </p>
+          </div>
+        </div>
+
+        <!-- Career Image -->
+        <div class="col-lg-6">
+          <div class="career-image" style="text-align: center;">
+            <img src="assets/img/illustration-1.png" alt="Website Development Careers" class="img-fluid" style="max-width: 100%; border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Career Form -->
+      <div class="row">
+        <div class="col-12">
+          <h3>Join Our Team</h3>
+          <p>Fill out the form below to apply for a position in website development. Select your field of interest, and our team will get back to you with the best opportunities!</p>
+          
+          <form action="submit_form.php" method="POST">
+            <!-- Name -->
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="Enter your full name">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" required placeholder="Enter your email address">
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" required placeholder="Enter your phone number">
+            </div>
+
+            <!-- Position Selection -->
+            <div class="mb-3">
+              <label for="position" class="form-label">Select Your Desired Position</label>
+              <select id="position" name="position" class="form-select" required>
+                <option value="">Select a Position</option>
+                <option value="Frontend Developer">Frontend Developer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
+                <option value="Project Manager">Project Manager</option>
+              </select>
+            </div>
+
+            <!-- Qualification Selection -->
+            <div class="mb-3">
+              <label for="qualification" class="form-label">Qualification</label>
+              <select id="qualification" name="qualification" class="form-select" required onchange="showExperienceFields()">
+                <option value="">Select Your Qualification</option>
+                <option value="Fresher">Fresher</option>
+                <option value="Experienced">Experienced</option>
+              </select>
+            </div>
+
+            <!-- Fresher Section (Hidden by default) -->
+            <div id="fresherSection" style="display: none;">
+              <p>As a fresher, we’ll help you get started on your career journey!</p>
+            </div>
+
+            <!-- Experienced Section (Hidden by default) -->
+            <div id="experiencedSection" style="display: none;">
+              <div class="mb-3">
+                <label for="workplace" class="form-label">Current Workplace</label>
+                <input type="text" id="workplace" name="workplace" class="form-control" placeholder="Enter your current workplace">
+              </div>
+
+              <div class="mb-3">
+                <label for="currentCTC" class="form-label">Current CTC</label>
+                <input type="text" id="currentCTC" name="currentCTC" class="form-control" placeholder="Enter your current CTC">
+              </div>
+
+              <div class="mb-3">
+                <label for="expectedSalary" class="form-label">Expected Salary</label>
+                <input type="text" id="expectedSalary" name="expectedSalary" class="form-control" placeholder="Enter your expected salary">
+              </div>
+
+              <div class="mb-3">
+                <label for="address" class="form-label">Full Address</label>
+                <textarea id="address" name="address" class="form-control" rows="4" placeholder="Enter your full address"></textarea>
+              </div>
+            </div>
+
+            <!-- Why Should We Hire You -->
+            <div class="mb-3">
+              <label for="message" class="form-label">Why Should We Hire You?</label>
+              <textarea id="message" name="message" class="form-control" rows="4" required placeholder="Tell us why you're a good fit for the role"></textarea>
+            </div>
+
+            <!-- Resume Upload -->
+            <div class="mb-3">
+              <label for="resume" class="form-label">Upload Your Resume</label>
+              <input type="file" id="resume" name="resume" class="form-control" accept=".pdf,.doc,.docx,.txt" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Career Opportunities Section -->
 
 
   </main>
@@ -177,6 +298,7 @@
 
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/web-developer.js"></script>
 
 </body>
 
