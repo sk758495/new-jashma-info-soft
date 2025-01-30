@@ -1,0 +1,55 @@
+
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #bbb;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1s;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.blink {
+    font-weight: bold;
+    animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
