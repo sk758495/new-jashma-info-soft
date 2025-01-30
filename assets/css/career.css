@@ -1,0 +1,257 @@
+/* General Styling for Hero Section */
+#careers-hero {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .hero-buttons a {
+    padding: 12px 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effects for buttons */
+  .hero-buttons .btn-primary:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(-5px);
+  }
+  
+  .hero-buttons .btn-outline-primary:hover {
+    color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-5px);
+  }
+  
+  /* Card Hover Effect */
+  .position-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .position-item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+  
+  /* Smooth Scroll Effect */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Benefit Section Enhancements */
+  .benefit-item {
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Scroll to Top Button */
+  .scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-to-top-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Show button when scrolling */
+  .show-scroll-btn {
+    display: block;
+  }
+  
+  /* General Styling for Open Positions */
+.open-positions {
+    padding: 80px 0;
+    background-color: #f0f2f5;
+  }
+  
+  .position-item {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly */
+    height: 380px; /* Fixed height for uniform box size */
+    box-sizing: border-box;
+  }
+  
+  .position-item:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+  }
+  
+  .position-item h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .position-item p {
+    color: #555;
+    font-size: 1rem;
+    margin: 15px 0;
+    flex-grow: 1; /* Allow this section to take up remaining space */
+  }
+  
+  /* Icons */
+  .position-icon {
+    font-size: 3rem;
+    color: #007bff; /* Default color, will be changed later per position */
+    margin-bottom: 15px;
+  }
+  
+  /* Different Colors for Each Role */
+  .position-item:nth-child(1) .position-icon {
+    color: #007bff; /* Green for Web Developer */
+  }
+  
+  .position-item:nth-child(2) .position-icon {
+    color: #ff9800; /* Orange for Digital Marketing Specialist */
+  }
+  
+  .position-item:nth-child(3) .position-icon {
+    color: #2196f3; /* Blue for UI/UX Designer */
+  }
+  
+  /* Button Styling */
+  .position-item .btn-primary {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .position-item .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsiveness for Mobile Devices */
+  @media (max-width: 767px) {
+    .position-item {
+      text-align: left;
+    }
+  }
+  
+  /* General Styling for Why Join Us */
+.why-join-us {
+    padding: 80px 0;
+    background-color: #f7f9fc; /* Light background color for freshness */
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-header p {
+    font-size: 1.1rem;
+    color: #777;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .benefit-item {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Icon Colors for Each Benefit */
+  .benefit-item:nth-child(1) .benefit-icon {
+    color: #2196f3; /* Green for Collaborative Environment */
+  }
+  
+  .benefit-item:nth-child(2) .benefit-icon {
+    color: #ff9800; /* Orange for Career Growth */
+  }
+  
+  .benefit-item:nth-child(3) .benefit-icon {
+    color: #2196f3; /* Blue for Recognition & Rewards */
+  }
+  
+  .benefit-item:nth-child(4) .benefit-icon {
+    color: #9c27b0; /* Purple for Flexible Work Hours */
+  }
+  
+  .benefit-item:nth-child(5) .benefit-icon {
+    color: #f44336; /* Red for Employee Well-being */
+  }
+  
+  .benefit-item:nth-child(6) .benefit-icon {
+    color: #00bcd4; /* Teal for Competitive Salary */
+  }
+  
+  /* Text Styling */
+  .benefit-item h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .benefit-item p {
+    font-size: 1rem;
+    color: #555;
+    flex-grow: 1;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 767px) {
+    .benefit-item {
+      text-align: left;
+    }
+  }
+
+  
+
