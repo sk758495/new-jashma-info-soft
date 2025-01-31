@@ -8,7 +8,7 @@ require 'vendor/autoload.php';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    var_dump($_POST);
     // Get form data
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
