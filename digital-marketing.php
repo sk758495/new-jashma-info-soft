@@ -92,6 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->send();
 
         echo "Your application has been submitted successfully!";
+
+        echo '<script>
+        setTimeout(function(){
+            window.location.href = "digital-marketing-specialist.html"; // Redirect after 3 seconds
+        }, 3000);
+      </script>';
     } catch (Exception $e) {
         echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }
