@@ -49,11 +49,76 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Subject = "New Job Application from $fullName";
         $mail->Body = "
         <html>
+        <head>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styling for email */
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Email header styling */
+        .email-header {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Logo styling */
+        .email-header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        /* Heading styling */
+        .email-header h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Email body text styling */
+        .email-body {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Styling for form details */
+        .email-body p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .email-body p strong {
+            color: #333;
+        }
+    </style>
+</head>
         <body>
-        <div class='email-header'>
+         <div class='email-container'>
+        <div class='email-header' >
                     <img src='$company_logo' alt='Company Logo'>
                     <h2>New Contact Form Submission</h2>
             </div>
+            <div class='email-body'>
             <p><strong>Name:</strong> $fullName</p>
             <p><strong>Email:</strong> $email</p>
             <p><strong>Phone:</strong> $phone</p>
@@ -64,6 +129,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Current CTC:</strong> $currentCTC</p>
             <p><strong>Expected Salary:</strong> $expectedSalary</p>
             <p><strong>Address:</strong> $address</p>
+            </div>
+            </div>
         </body>
         </html>
         ";
@@ -78,14 +145,81 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Subject = $customer_subject;
         $mail->Body = "
         <html>
+        <head>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styling for email */
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Email header styling */
+        .email-header {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Logo styling */
+        .email-header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        /* Heading styling */
+        .email-header h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Email body text styling */
+        .email-body {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Styling for form details */
+        .email-body p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .email-body p strong {
+            color: #333;
+        }
+    </style>
+</head>
         <body>
+        <div class='email-container'>
         <div class='email-header'>
                     <img src='$company_logo' alt='Company Logo'>
                     <h2>New Contact Form Submission</h2>
                 </div>
+                <div class='email-body'>
             <p>Dear $fullName,</p>
             <p>Thank you for applying for the $position position. Our team will review your application and contact you shortly.</p>
             <p>Best regards,<br>Hiring Team</p>
+            </div>
+        </div>
         </body>
         </html>
         ";
@@ -95,7 +229,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo '<script>
         setTimeout(function(){
-            window.location.href = "digital-marketing-specialist.html"; // Redirect after 3 seconds
+            window.location.href = "ui-ux.html"; // Redirect after 3 seconds
         }, 3000);
       </script>';
     } catch (Exception $e) {
