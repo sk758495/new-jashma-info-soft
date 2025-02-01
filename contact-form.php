@@ -1,74 +1,65 @@
 <?php
-// Include the PHPMailer class
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Include the PHPMailer library
 require 'vendor/autoload.php';
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    var_dump($_POST);
-    // Get form data
-    $name = htmlspecialchars($_POST['name']);
+    // Form data from the contact form
+    $fullName = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
-
-    // Email settings (SMTP)
+    
+    // Email Settings
     $smtp_host = 'smtp.gmail.com';  // For Gmail
-    $smtp_port = 587;  // For TLS
     $smtp_user = 'arjuncableconverters@gmail.com';  // Your Gmail address
     $smtp_pass = 'mtrlfujdiyxxryjz';  // Your Gmail password or App Password
-    $from_email = 'arjuncableconverters@gmail.com';  // Your email address
+    $from_email = 'arjuncableconverters@gmail.com';  // Your email address    
     $company_logo = 'https://jashmainfosoft.com//assets/img/jasma-logo-removebg-preview.png';  // Link to your company logo image (absolute URL)
 
-    // Set up PHPMailer
+    // PHPMailer setup
     $mail = new PHPMailer(true);
-
     try {
-        // Server settings
         $mail->isSMTP();
         $mail->Host = $smtp_host;
         $mail->SMTPAuth = true;
         $mail->Username = $smtp_user;
         $mail->Password = $smtp_pass;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = $smtp_port;
-
-            // Debugging output
-        $mail->SMTPDebug = 2;  // This will output detailed debug information
-        $mail->Debugoutput = 'html';
-
+        $mail->Port = 587;
 
         // Recipients
-        $mail->setFrom($from_email, 'Jashma Info Soft');
-        $mail->addAddress('arjuncableconverters@gmail.com', 'Dhanji Bharwad'); // Add your email address
-        $mail->addReplyTo($email, $name);  // Reply to the customer's email
+        $mail->setFrom($from_email, 'Contact Form');
+        $mail->addAddress('sk758495@gmail.com');  // Hiring team or recipient email
+        $mail->addReplyTo($email, $fullName);
 
-        // Content (email to you)
+        // Email Body (to you)
         $mail->isHTML(true);
-        $mail->Subject = "(Jashma) New Message from Contact Form: $subject";
+        $mail->Subject = "New Contact Form Submission: $subject";
         $mail->Body = "
         <html>
         <head>
             <style>
-                body { font-family: Arial, sans-serif; }
-                .email-content { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
-                .email-header { background-color: #f8f8f8; padding: 10px; text-align: center; border-radius: 5px; }
-                .email-header img { width: 150px; }
-                .email-body { margin-top: 20px; }
+                /* General body styling */
+                body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+                .email-container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+                .email-header { background-color: #f8f8f8; text-align: center; padding: 20px; border-radius: 5px; }
+                .email-header img { width: 150px; height: auto; margin-bottom: 15px; }
+                .email-header h2 { font-size: 24px; color: #333; margin: 0; font-family: Arial, sans-serif; }
+                .email-body { padding: 20px; background-color: #ffffff; border-radius: 5px; margin-top: 20px; }
+                .email-body p { font-size: 16px; color: #555; }
+                .email-body p strong { color: #333; }
             </style>
         </head>
         <body>
-            <div class='email-content'>
+            <div class='email-container'>
                 <div class='email-header'>
                     <img src='$company_logo' alt='Company Logo'>
                     <h2>New Contact Form Submission</h2>
                 </div>
                 <div class='email-body'>
-                    <h3>Form Details:</h3>
-                    <p><strong>Name:</strong> $name</p>
+                    <p><strong>Name:</strong> $fullName</p>
                     <p><strong>Email:</strong> $email</p>
                     <p><strong>Subject:</strong> $subject</p>
                     <p><strong>Message:</strong> $message</p>
@@ -78,47 +69,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </html>
         ";
 
-        // Send email to you
+        // Send email to the recipient (your email)
         $mail->send();
 
-        // Send a confirmation email to the customer
+        // Send confirmation email to the applicant
         $customer_subject = "Thank you for contacting us!";
-        $mail->clearAddresses();  // Clear the previous recipient
-        $mail->addAddress($email, $name);  // Send the reply to the customer's email
+        $mail->clearAddresses();
+        $mail->addAddress($email, $fullName);
         $mail->Subject = $customer_subject;
         $mail->Body = "
         <html>
         <head>
             <style>
-                body { font-family: Arial, sans-serif; }
-                .email-content { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
-                .email-header { background-color: #f8f8f8; padding: 10px; text-align: center; border-radius: 5px; }
-                .email-header img { width: 150px; }
-                .email-body { margin-top: 20px; }
+                body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+                .email-container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+                .email-header { background-color: #f8f8f8; text-align: center; padding: 20px; border-radius: 5px; }
+                .email-header img { width: 150px; height: auto; margin-bottom: 15px; }
+                .email-header h2 { font-size: 24px; color: #333; margin: 0; font-family: Arial, sans-serif; }
+                .email-body { padding: 20px; background-color: #ffffff; border-radius: 5px; margin-top: 20px; }
+                .email-body p { font-size: 16px; color: #555; }
+                .email-body p strong { color: #333; }
             </style>
         </head>
         <body>
-            <div class='email-content'>
+            <div class='email-container'>
                 <div class='email-header'>
                     <img src='$company_logo' alt='Company Logo'>
-                    <h2>Thank You for Your Message!</h2>
+                    <h2>Thank You for Contacting Us</h2>
                 </div>
                 <div class='email-body'>
-                    <p>Dear $name,</p>
-                    <p>Thank you for reaching out to us. We have received your message and our team will get back to you as soon as possible.</p>
-                    <p>If your inquiry is urgent, please contact us directly at our phone number.</p>
-                    <p>Best regards,<br>Your Company Team</p>
+                    <p>Dear $fullName,</p>
+                    <p>Thank you for contacting us. We have received your message and will get back to you shortly.</p>
+                    <p>Best regards,<br>Your Company Name</p>
                 </div>
             </div>
         </body>
         </html>
         ";
-
-        // Send confirmation email to the customer
         $mail->send();
-        echo "Your message has been sent successfully. Thank you for reaching out to us!";
+
+        echo "Your message has been sent successfully!";
+        
+        // Optional: Redirect after message is sent
+        echo '<script>
+        setTimeout(function(){
+            window.location.href = "thank-you.html"; // Redirect after 3 seconds
+        }, 3000);
+        </script>';
+        
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }
 }
 ?>
