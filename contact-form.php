@@ -30,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port = 587;
 
         // Recipients
-        $mail->setFrom($from_email, 'Contact Form');
-        $mail->addAddress('sk758495@gmail.com');  // Hiring team or recipient email
+        $mail->setFrom($from_email, 'New Contact Form (Jashma Info SOft Pvt. Ltd.)');
+        $mail->addAddress('arjuncableconverters@gmail.com');  // Hiring team or recipient email
         $mail->addReplyTo($email, $fullName);
 
         // Email Body (to you)
