@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port = 587;
 
         // Recipients
-        $mail->setFrom($from_email, 'New Contact Form (Jashma InfoSOft Pvt. Ltd.)');
+        $mail->setFrom($from_email, 'New Contact Form (Jashma InfoSoft Pvt. Ltd.)');
         $mail->addAddress('jashmainfosoftpvtltd@gmail.com');  // Hiring team or recipient email
         $mail->addReplyTo($email, $fullName);
 
@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class='email-body'>
                     <p>Dear $fullName,</p>
                     <p>Thank you for contacting us. We have received your message and will get back to you shortly.</p>
-                    <p>Best regards,<br>Your Company Name</p>
+                    <p>Best regards,<br>Jashma InfoSoft Pvt. Ltd.</p>
                 </div>
             </div>
         </body>
