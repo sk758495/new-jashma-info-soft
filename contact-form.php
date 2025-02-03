@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Optional: Redirect after message is sent
         echo '<script>
         setTimeout(function(){
-            window.location.href = "thank-you.html"; // Redirect after 3 seconds
+            window.location.href = "index.html"; // Redirect after 3 seconds
         }, 3000);
         </script>';
         
