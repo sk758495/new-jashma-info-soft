@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Email Settings
   
     $smtp_host = 'smtp.gmail.com';  // For Gmail
-    $smtp_user = 'arjuncableconverters@gmail.com';  // Your Gmail address
-    $smtp_pass = 'mtrlfujdiyxxryjz';  // Your Gmail password or App Password
-    $from_email = 'arjuncableconverters@gmail.com';  // Your email address    
+    $smtp_user = 'jashmainfosoftpvtltd@gmail.com';  // Your Gmail address
+    $smtp_pass = 'stfwgxmitvwatwiv';  // Your Gmail password or App Password
+    $from_email = 'jashmainfosoftpvtltd@gmail.com';  // Your email address    
     $company_logo = 'https://jashmainfosoft.com//assets/img/jasma-logo-removebg-preview.png';  // Link to your company logo image (absolute URL)
 
     // PHPMailer setup
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recipients
         $mail->setFrom($from_email, 'Hiring Team');
-        $mail->addAddress('arjuncableconverters@gmail.com');  // Your hiring team email
+        $mail->addAddress('jashmainfosoftpvtltd@gmail.com');  // Your hiring team email
         $mail->addReplyTo($email, $fullName);
 
         // Email Body (to you)
